@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import './App.css';
-import Clock from './Clock';
+import Post from './components/Post';
+import Sidebar from './components/Sidebar';
 
 
 function App() {
+
+  const [post] = useState({
+    title: 'Deus é amor',
+    content: 'Jesus é o caminho'
+  })
+
   return (
     <div className="App">
       <header className="App-header">
-        <Clock/>
+       <Sidebar post={post}/>
+       <Post post={post} totalComments={10} />
       </header>
     </div>
   );
